@@ -1,0 +1,3647 @@
+{
+	"info": {
+		"_postman_id": "cd2d890e-84c4-42bc-ac5c-890ef6a2e911",
+		"name": "l2-b1-assignment-8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29049886"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const user = res.data;\r",
+							"pm.collectionVariables.set('USER_ID', user.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jhon Doe\",\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"admin\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/auth/signup",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign up",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jhon Doe\",\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"admin\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "265"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:02 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"109-BIDTQei0hoS/LbbBp13YI176Z0U\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::2kh8l-1695576001977-686016793cc0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"id\": \"4848dac8-ee75-4f72-9727-31cb7a6505b2\",\n        \"name\": \"Jhon Doe\",\n        \"email\": \"admin1@example.com\",\n        \"role\": \"admin\",\n        \"contactNo\": \"1234567890\",\n        \"address\": \"Dhaka, Bangladesh\",\n        \"profileImg\": \"user.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign in",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const token = res.token;\r",
+							"pm.collectionVariables.set('TOKEN', token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/auth/signin",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign in",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/signin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:13 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"126-8Ck2vEk8E36IXMq/nRdU7/rK3ac\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiI0ODQ4ZGFjOC1lZTc1LTRmNzItOTcyNy0zMWNiN2E2NTA1YjIiLCJpYXQiOjE2OTU1NzYwMTMsImV4cCI6MTcyNzExMjAxM30.Aa5xmnnBvVOvj8f1ag8l0ogzqmWbnjTXdAIfNZmV-_8; Path=/; HttpOnly; Secure"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::lqgcm-1695576013778-39539727a81a"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User signin successfully!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiI0ODQ4ZGFjOC1lZTc1LTRmNzItOTcyNy0zMWNiN2E2NTA1YjIiLCJpYXQiOjE2OTU1NzYwMTMsImV4cCI6MTcyNzExMjAxM30.KmTjf5WzprOhLUZ9EGrMvhDl1108ULijDS4ezGS2ATk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/users",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:04:09 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"3ff-XqFaspmtmEfYLQcFsu7l6FFPbTE\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::rhxn5-1695575049095-9cb4b5f0e135"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Users retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": \"3f802b4a-4cc1-43e5-a46f-8218a1659651\",\n            \"name\": \"admin\",\n            \"email\": \"admin@example.com\",\n            \"role\": \"admin\",\n            \"contactNo\": \"1234567890\",\n            \"address\": \"Dhaka, Bangladesh\",\n            \"profileImg\": \"user.jpg\"\n        },\n        {\n            \"id\": \"15893736-3ad7-4041-9155-8d67f4bfd406\",\n            \"name\": \"customer1\",\n            \"email\": \"customer1@example.com\",\n            \"role\": \"customer\",\n            \"contactNo\": \"1234567890\",\n            \"address\": \"Khulna, Bangladesh\",\n            \"profileImg\": \"customer1.jpg\"\n        },\n        {\n            \"id\": \"222d135d-a1c3-4895-a24a-d661a27220cb\",\n            \"name\": \"Jhon Doe\",\n            \"email\": \"ph@example.com\",\n            \"role\": \"admin\",\n            \"contactNo\": \"1234567890\",\n            \"address\": \"Dhaka, Bangladesh\",\n            \"profileImg\": \"user.jpg\"\n        },\n        {\n            \"id\": \"c49fd86b-e2fa-4a9c-8928-a53ebd045adf\",\n            \"name\": \"Jhon Doe\",\n            \"email\": \"ph3@example.com\",\n            \"role\": \"customer\",\n            \"contactNo\": \"1234567890\",\n            \"address\": \"Dhaka, Bangladesh\",\n            \"profileImg\": \"user.jpg\"\n        },\n        {\n            \"id\": \"965a0afa-8a13-40af-b795-d9adcecbdd0a\",\n            \"name\": \"Jhon Doe\",\n            \"email\": \"admin1@example.com\",\n            \"role\": \"admin\",\n            \"contactNo\": \"1234567890\",\n            \"address\": \"Dhaka, Bangladesh\",\n            \"profileImg\": \"user.jpg\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get User By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/users/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{USER_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{USER_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "267"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:04:15 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"10b-TUZh+4qxWmRF8Jrs4CaGo0Opsh8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::hxw4v-1695575055352-3ddcd093251f"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User retrieved successfully\",\n    \"data\": {\n        \"id\": \"965a0afa-8a13-40af-b795-d9adcecbdd0a\",\n        \"name\": \"Jhon Doe\",\n        \"email\": \"admin1@example.com\",\n        \"role\": \"admin\",\n        \"contactNo\": \"1234567890\",\n        \"address\": \"Dhaka, Bangladesh\",\n        \"profileImg\": \"user.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/profile",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:04:20 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"f7-HXp1OkYO90UFOj47tlu5di2Suf8\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::cnngg-1695575060270-5434de57faae"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Profile retrieved successfully\",\n    \"data\": {\n        \"name\": \"Jhon Doe\",\n        \"email\": \"admin1@example.com\",\n        \"password\": \"john123\",\n        \"role\": \"admin\",\n        \"contactNo\": \"1234567890\",\n        \"address\": \"Dhaka, Bangladesh\",\n        \"profileImg\": \"user.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create A Category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const category = res.data;\r",
+							"pm.collectionVariables.set('CATEGORY_ID', category.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Programming C\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/categories/create-category",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"create-category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create A Category",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Programming C\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/categories/create-category",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"create-category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:29 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"98-WS5U8i/wMBijtrdNtTpOCAVOvvw\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::d2j59-1695576029224-2e15809da800"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n        \"title\": \"Programming C\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create A Category For Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const category = res.data;\r",
+							"pm.collectionVariables.set('CATEGORY_CUCTOMER', category.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Programming C\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/categories/create-category",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						"create-category"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create A Category For Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Programming C\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/categories/create-category",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"create-category"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:35 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"98-cpg3XFLcAn8l7+eYqDt025xkELA\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::8gwdb-1695576034998-f213bcfcaf86"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"id\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n        \"title\": \"Programming C\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/categories",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Categories",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/categories",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "763"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:40 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2fb-N+Oj1cBzUQVGA4Z+m0xD++3PWKw\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::bf2tp-1695576040109-b3196bcb756c"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Categories fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"f2d1163b-8d79-4d65-83fe-f0705e9951ea\",\n            \"title\": \"Fiction\"\n        },\n        {\n            \"id\": \"18ff5a29-e34b-41cb-8c2b-64d77f93b032\",\n            \"title\": \"Thriller\"\n        },\n        {\n            \"id\": \"7721675b-2574-4d85-b058-6da5e4e17bcc\",\n            \"title\": \"Novel\"\n        },\n        {\n            \"id\": \"764a2387-81bc-459a-9e22-1180bfa363c2\",\n            \"title\": \"Programming\"\n        },\n        {\n            \"id\": \"59aaa2e3-75f0-4d7e-aaa3-01d42409cd97\",\n            \"title\": \"Programming\"\n        },\n        {\n            \"id\": \"c9d3bcb4-711e-44a6-bf31-ea63df0a6174\",\n            \"title\": \"Programming C\"\n        },\n        {\n            \"id\": \"3b995451-07fc-4f5f-ae57-68b76391c596\",\n            \"title\": \"Programming C\"\n        },\n        {\n            \"id\": \"2b153d9b-31df-4a4f-a0aa-c17ea55c0166\",\n            \"title\": \"Programming C\"\n        },\n        {\n            \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n            \"title\": \"Programming C\"\n        },\n        {\n            \"id\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n            \"title\": \"Programming C\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Category By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/categories/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{CATEGORY_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Category By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/categories/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{CATEGORY_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "152"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:44 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"98-xW6XUeloBXdvvrB3hxbFR3N3a9E\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::rqdml-1695576044152-d9d597fef58f"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Category fetched successfully\",\n    \"data\": {\n        \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n        \"title\": \"Programming C\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create A Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const book = res.data;\r",
+							"pm.collectionVariables.set('BOOK_ID', book.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Catcher in the Rye\",\r\n  \"author\": \"J.D. Salinger\",\r\n  \"genre\": \"Fiction\",\r\n  \"price\": 350.75,\r\n  \"publicationDate\": \"1951-07-16\",\r\n  \"categoryId\": \"{{CATEGORY_ID}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/books/create-book",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"create-book"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create A Book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"The Catcher in the Rye\",\r\n  \"author\": \"J.D. Salinger\",\r\n  \"genre\": \"Fiction\",\r\n  \"price\": 350.75,\r\n  \"publicationDate\": \"1951-07-16\",\r\n  \"categoryId\": \"{{CATEGORY_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/books/create-book",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create-book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "379"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:50 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"17b-zfHo3dWbHM9Dof35yvXBKoVbpak\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::nxgzs-1695576050066-65adbc19d15c"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n        \"title\": \"The Catcher in the Rye\",\n        \"author\": \"J.D. Salinger\",\n        \"price\": 350.75,\n        \"genre\": \"Fiction\",\n        \"publicationDate\": \"1951-07-16\",\n        \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n        \"category\": {\n            \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n            \"title\": \"Programming C\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Create A Book For Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const book = res.data;\r",
+							"pm.collectionVariables.set('BOOK_CUSTOMER', book.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Catcher in the Rye\",\r\n  \"author\": \"J.D. Salinger\",\r\n  \"genre\": \"Fiction\",\r\n  \"price\": 350.75,\r\n  \"publicationDate\": \"1951-07-16\",\r\n  \"categoryId\": \"{{CATEGORY_CUCTOMER}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/books/create-book",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						"create-book"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create A Book For Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"The Catcher in the Rye\",\r\n  \"author\": \"J.D. Salinger\",\r\n  \"genre\": \"Fiction\",\r\n  \"price\": 350.75,\r\n  \"publicationDate\": \"1951-07-16\",\r\n  \"categoryId\": \"{{CATEGORY_CUCTOMER}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/books/create-book",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"create-book"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "379"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:20:55 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"17b-FOR7+F0AKGpUx1zOoA5z7CllT1w\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::h7tq7-1695576055798-30ccaf2856a3"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"id\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n        \"title\": \"The Catcher in the Rye\",\n        \"author\": \"J.D. Salinger\",\n        \"price\": 350.75,\n        \"genre\": \"Fiction\",\n        \"publicationDate\": \"1951-07-16\",\n        \"categoryId\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n        \"category\": {\n            \"id\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n            \"title\": \"Programming C\"\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign up [Customer]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const customer = res.data;\r",
+							"pm.collectionVariables.set('CUSTOMER_ID', customer.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jhon Doe\",\r\n  \"email\": \"customer@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"customer\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/auth/signup",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign up [Customer]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Jhon Doe\",\r\n  \"email\": \"customer@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"customer\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:00 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"10e-dCK6psjsqgy82OmAgKUWMETY4+I\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::h2b45-1695576060866-0f0c96878102"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"id\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n        \"name\": \"Jhon Doe\",\n        \"email\": \"customer@example.com\",\n        \"role\": \"customer\",\n        \"contactNo\": \"1234567890\",\n        \"address\": \"Dhaka, Bangladesh\",\n        \"profileImg\": \"user.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign in [Customer]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const token = res.token;\r",
+							"pm.collectionVariables.set('CUSTOMER_TOKEN', token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"customer@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/auth/signin",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign in [Customer]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"customer@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/signin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "298"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:05 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"12a-kEUDexCWu3/16JbBKZa+HJoTebM\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VySWQiOiJjZjIzNjE5Ni01M2MzLTQ3MGItYjU4Mi1jYjg4ZWRkZDlhNzIiLCJpYXQiOjE2OTU1NzYwNjUsImV4cCI6MTcyNzExMjA2NX0.4sB3rU2vAlTECl4D3C_VKUXvEd0lX72nyMxIuiVDeWs; Path=/; HttpOnly; Secure"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::5hr7d-1695576065777-41678caf5387"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User signin successfully!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VySWQiOiJjZjIzNjE5Ni01M2MzLTQ3MGItYjU4Mi1jYjg4ZWRkZDlhNzIiLCJpYXQiOjE2OTU1NzYwNjUsImV4cCI6MTcyNzExMjA2NX0.at8krQxrYF-rqg3Xg0lFjhS3xJSmUl9u-LNh_XxpbHY\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create A Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const user = res.data;\r",
+							"pm.collectionVariables.set('ORDER_ID', user.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CUSTOMER_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderedBooks\": [\r\n        {\r\n            \"bookId\": \"{{BOOK_CUSTOMER}}\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/orders/create-order",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"create-order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create A Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{CUSTOMER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderedBooks\": [\r\n        {\r\n            \"bookId\": \"{{BOOK_CUSTOMER}}\",\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/orders/create-order",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"create-order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "311"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:09 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"137-USimDF5KuVxXvt2zmh65I2cCjfU\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::sxbff-1695576069843-9b2dfdecdb22"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"id\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n        \"userId\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n        \"status\": \"pending\",\n        \"createdAt\": \"2023-09-24T17:21:09.865Z\",\n        \"orderedBooks\": [\n            {\n                \"bookId\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n                \"quantity\": 1\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Orders By Customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CUSTOMER_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/orders",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Orders By Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{CUSTOMER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "407"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:14 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"197-kY0DrF6sBBJocRcRp4mICYhuWkE\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::wwqpx-1695576074211-542ea35a98c8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Orders fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n            \"userId\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-24T17:21:09.865Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"5a9d3832-14cb-4471-99c3-3d3a1bb0979a\",\n                    \"orderId\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n                    \"bookId\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n                    \"quantity\": 1\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Order By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{CUSTOMER_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/orders/:orderId",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						":orderId"
+					],
+					"variable": [
+						{
+							"key": "orderId",
+							"value": "{{ORDER_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Order By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{CUSTOMER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/orders/:orderId",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "{{ORDER_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "404"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:20 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"194-9GLCYlAYAtItsZLTdivmSThRCUc\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::wsmjr-1695576080131-ac896a1f7715"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Order fetched successfully\",\n    \"data\": {\n        \"id\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n        \"userId\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n        \"status\": \"pending\",\n        \"createdAt\": \"2023-09-24T17:21:09.865Z\",\n        \"orderedBooks\": [\n            {\n                \"id\": \"5a9d3832-14cb-4471-99c3-3d3a1bb0979a\",\n                \"orderId\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n                \"bookId\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n                \"quantity\": 1\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/books",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/books",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:26 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"bd0-fw0kvIKiwgcGIQHjnbXLhAvIHRo\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::wwqpx-1695576086227-6f4b1c1d5153"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Books fetched successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"size\": 10,\n        \"total\": 10,\n        \"totalPage\": 1\n    },\n    \"data\": [\n        {\n            \"id\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n            \"category\": {\n                \"id\": \"1c1a4ded-5f3d-4ab0-9cfe-5506700e2b2b\",\n                \"title\": \"Programming C\"\n            }\n        },\n        {\n            \"id\": \"28c1b4a0-48fc-4a42-a4d5-c4366b66ff13\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"3b995451-07fc-4f5f-ae57-68b76391c596\",\n            \"category\": {\n                \"id\": \"3b995451-07fc-4f5f-ae57-68b76391c596\",\n                \"title\": \"Programming C\"\n            }\n        },\n        {\n            \"id\": \"bd0d97e3-a927-4bc2-93e0-d1ed11e16eda\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"2b153d9b-31df-4a4f-a0aa-c17ea55c0166\",\n            \"category\": {\n                \"id\": \"2b153d9b-31df-4a4f-a0aa-c17ea55c0166\",\n                \"title\": \"Programming C\"\n            }\n        },\n        {\n            \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n            \"category\": {\n                \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n                \"title\": \"Programming C\"\n            }\n        },\n        {\n            \"id\": \"c1408d2a-b3f0-4c71-98b3-41aedc0bc048\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"764a2387-81bc-459a-9e22-1180bfa363c2\",\n            \"category\": {\n                \"id\": \"764a2387-81bc-459a-9e22-1180bfa363c2\",\n                \"title\": \"Programming\"\n            }\n        },\n        {\n            \"id\": \"65e85ee4-55c0-4898-acab-51c78ec27db6\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"59aaa2e3-75f0-4d7e-aaa3-01d42409cd97\",\n            \"category\": {\n                \"id\": \"59aaa2e3-75f0-4d7e-aaa3-01d42409cd97\",\n                \"title\": \"Programming\"\n            }\n        },\n        {\n            \"id\": \"e741445f-e66a-49a4-9aa8-06a6d1dc8445\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"c9d3bcb4-711e-44a6-bf31-ea63df0a6174\",\n            \"category\": {\n                \"id\": \"c9d3bcb4-711e-44a6-bf31-ea63df0a6174\",\n                \"title\": \"Programming C\"\n            }\n        },\n        {\n            \"id\": \"973f3d38-3a6a-4eae-a8e1-555c40f1a40d\",\n            \"title\": \"abc\",\n            \"author\": \"xyz\",\n            \"price\": 200,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"2010-12-16\",\n            \"categoryId\": \"f2d1163b-8d79-4d65-83fe-f0705e9951ea\",\n            \"category\": {\n                \"id\": \"f2d1163b-8d79-4d65-83fe-f0705e9951ea\",\n                \"title\": \"Fiction\"\n            }\n        },\n        {\n            \"id\": \"59919f72-23c0-4e0e-90f8-688528d8b2de\",\n            \"title\": \"def\",\n            \"author\": \"xyz\",\n            \"price\": 100,\n            \"genre\": \"Novel\",\n            \"publicationDate\": \"1910-12-16\",\n            \"categoryId\": \"7721675b-2574-4d85-b058-6da5e4e17bcc\",\n            \"category\": {\n                \"id\": \"7721675b-2574-4d85-b058-6da5e4e17bcc\",\n                \"title\": \"Novel\"\n            }\n        },\n        {\n            \"id\": \"5701b7da-2134-495b-ac6b-d2b1504d5db3\",\n            \"title\": \"ghi\",\n            \"author\": \"lmn\",\n            \"price\": 300,\n            \"genre\": \"Thriller\",\n            \"publicationDate\": \"1910-12-16\",\n            \"categoryId\": \"18ff5a29-e34b-41cb-8c2b-64d77f93b032\",\n            \"category\": {\n                \"id\": \"18ff5a29-e34b-41cb-8c2b-64d77f93b032\",\n                \"title\": \"Thriller\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Book By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/books/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{BOOK_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Book By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/books/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{BOOK_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "298"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:32 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"12a-HBNRCDZfwZr4l6/Y84CTMrL9xUU\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::pkjqt-1695576092131-6a99cd33e4b3"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Book fetched successfully\",\n    \"data\": {\n        \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n        \"title\": \"The Catcher in the Rye\",\n        \"author\": \"J.D. Salinger\",\n        \"price\": 350.75,\n        \"genre\": \"Fiction\",\n        \"publicationDate\": \"1951-07-16\",\n        \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Books By Category ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/books/:categoryId/category",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						":categoryId",
+						"category"
+					],
+					"variable": [
+						{
+							"key": "categoryId",
+							"value": "{{CATEGORY_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Books By Category ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/books/:categoryId/category",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								":categoryId",
+								"category"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "{{CATEGORY_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Age",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "464"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:37 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1d0-bax7oB7Hz6yav8CQLgm6yO+cRiw\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::jrh4n-1695576097762-e47e8170bbf8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Books with associated category data fetched successfully\",\n    \"meta\": {\n        \"page\": 1,\n        \"size\": 10,\n        \"total\": 1,\n        \"totalPage\": 1\n    },\n    \"data\": [\n        {\n            \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n            \"title\": \"The Catcher in the Rye\",\n            \"author\": \"J.D. Salinger\",\n            \"price\": 350.75,\n            \"genre\": \"Fiction\",\n            \"publicationDate\": \"1951-07-16\",\n            \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n            \"category\": {\n                \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n                \"title\": \"Programming C\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign in [Admin]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"const token = res.token;\r",
+							"pm.collectionVariables.set('TOKEN', token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/auth/signin",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign in [Admin]",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin1@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/signin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "294"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:43 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"126-7kA8MK2KzJ4SPyVI8QPlB/jZzGI\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiI0ODQ4ZGFjOC1lZTc1LTRmNzItOTcyNy0zMWNiN2E2NTA1YjIiLCJpYXQiOjE2OTU1NzYxMDMsImV4cCI6MTcyNzExMjEwM30.ck4O53VdRacrjHW0-QZcjYMlokVqEKEI_bf_2F9GJ1c; Path=/; HttpOnly; Secure"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::h67fp-1695576103373-12a70842b042"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User signin successfully!\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VySWQiOiI0ODQ4ZGFjOC1lZTc1LTRmNzItOTcyNy0zMWNiN2E2NTA1YjIiLCJpYXQiOjE2OTU1NzYxMDMsImV4cCI6MTcyNzExMjEwM30.Jd98RsAnDac0PiqYgWQRRnM5xZn-NfnISHxOgRTGk7k\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Book By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Catcher in the Rye Part-1\",\r\n  \"author\": \"J.D. John\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 340.75\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/books/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{BOOK_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Book By ID",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"The Catcher in the Rye Part-1\",\r\n  \"author\": \"J.D. John\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 340.75\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/books/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{BOOK_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:49 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"131-/BpkGXQlBGa1PV8+0f5LQSFYvBg\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::8gwdb-1695576109077-0ea974019399"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Book updated successfully\",\n    \"data\": {\n        \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n        \"title\": \"The Catcher in the Rye Part-1\",\n        \"author\": \"J.D. John\",\n        \"price\": 340.75,\n        \"genre\": \"Programming\",\n        \"publicationDate\": \"1951-07-16\",\n        \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Book By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/books/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{BOOK_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Book By ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/books/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{BOOK_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:21:55 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"131-il+ajjUsSr1cnIruhknKOzeTlrM\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::884k2-1695576115278-744a8b0c88b6"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Book deleted successfully\",\n    \"data\": {\n        \"id\": \"f9ebd81a-a456-46c7-9519-452a0c9e1ee4\",\n        \"title\": \"The Catcher in the Rye Part-1\",\n        \"author\": \"J.D. John\",\n        \"price\": 340.75,\n        \"genre\": \"Programming\",\n        \"publicationDate\": \"1951-07-16\",\n        \"categoryId\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Category By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/categories/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{CATEGORY_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Category By ID",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/categories/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{CATEGORY_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:02 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"92-k6Xam6I7iieZJG6tGgVXywjdyjE\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::6nm67-1695576122267-6d3ee2655630"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n        \"title\": \"Fiction\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Category By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/categories/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"categories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{CATEGORY_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Category By ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/categories/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{CATEGORY_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "146"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:07 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"92-mblKXZI0SBQkQByLHJOOGU3Tfuc\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::dw69d-1695576127413-dcd4ebe7e28e"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Category deleted successfully\",\n    \"data\": {\n        \"id\": \"acb8a38a-bf54-4812-9a5b-82294aa2fd47\",\n        \"title\": \"Fiction\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/orders",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:14 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"935-NXXOsIEtCGxuDF62Oyn0+1pi97w\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "BYPASS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::2f7h4-1695576133978-e62729ef6f22"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Orders fetched successfully\",\n    \"data\": [\n        {\n            \"id\": \"887addaa-60c5-48ab-be22-f91da9beb5dc\",\n            \"userId\": \"15893736-3ad7-4041-9155-8d67f4bfd406\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-10T12:17:51.100Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"0b47649c-c91f-48fb-8b5c-80a2f1f8816c\",\n                    \"orderId\": \"887addaa-60c5-48ab-be22-f91da9beb5dc\",\n                    \"bookId\": \"973f3d38-3a6a-4eae-a8e1-555c40f1a40d\",\n                    \"quantity\": 3\n                }\n            ]\n        },\n        {\n            \"id\": \"772452b2-702f-4cd0-a011-4d789f9c8370\",\n            \"userId\": \"c49fd86b-e2fa-4a9c-8928-a53ebd045adf\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-11T16:46:21.520Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"b5352aeb-664b-42c8-93fa-fe34ee938598\",\n                    \"orderId\": \"772452b2-702f-4cd0-a011-4d789f9c8370\",\n                    \"bookId\": \"c1408d2a-b3f0-4c71-98b3-41aedc0bc048\",\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"2f6eb906-d538-4b58-9e2f-76ad4b9879e2\",\n            \"userId\": \"00e8fe87-38ca-4884-a8a7-b6667bda76cf\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-14T13:32:53.427Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"e2a8dce2-2d89-4be9-ba3d-f6ddce0c2ad5\",\n                    \"orderId\": \"2f6eb906-d538-4b58-9e2f-76ad4b9879e2\",\n                    \"bookId\": \"65e85ee4-55c0-4898-acab-51c78ec27db6\",\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"423addca-d69e-43d9-a57d-5fb492cb0c71\",\n            \"userId\": \"7af05fea-0145-4ff1-a0b9-ed5b1badd052\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-24T17:06:32.872Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"c03f955b-b430-42d6-adc1-74e51e6d64a7\",\n                    \"orderId\": \"423addca-d69e-43d9-a57d-5fb492cb0c71\",\n                    \"bookId\": \"e741445f-e66a-49a4-9aa8-06a6d1dc8445\",\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"6873401d-c71b-4678-bf0a-f21ba8973c13\",\n            \"userId\": \"1cea0d3c-9dc8-4784-9314-8972de118c4a\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-24T17:10:13.624Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"4bc29fc4-2549-4c9a-a667-cd004f601c23\",\n                    \"orderId\": \"6873401d-c71b-4678-bf0a-f21ba8973c13\",\n                    \"bookId\": \"28c1b4a0-48fc-4a42-a4d5-c4366b66ff13\",\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"1537a9f5-1670-4a37-bc5a-51b6d93761c5\",\n            \"userId\": \"19b418ed-06a3-481c-b246-5d4c65a9c156\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-24T17:19:16.847Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"d4300f8c-4c42-4e3a-b6e7-03bb2890b912\",\n                    \"orderId\": \"1537a9f5-1670-4a37-bc5a-51b6d93761c5\",\n                    \"bookId\": \"bd0d97e3-a927-4bc2-93e0-d1ed11e16eda\",\n                    \"quantity\": 1\n                }\n            ]\n        },\n        {\n            \"id\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n            \"userId\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2023-09-24T17:21:09.865Z\",\n            \"orderedBooks\": [\n                {\n                    \"id\": \"5a9d3832-14cb-4471-99c3-3d3a1bb0979a\",\n                    \"orderId\": \"4d340725-fc6d-40af-9dfc-7fac0c4b9203\",\n                    \"bookId\": \"9d4fcc60-f120-4a61-a15b-34eba3c1ab15\",\n                    \"quantity\": 1\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update User By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe1\",\r\n  \"email\": \"john5@example.com\",\r\n  \"contactNo\": \"01234567890\",\r\n  \"address\": \"Khulna, Bangladesh\",\r\n  \"profileImg\": \"user1.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/api/v1/users/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{USER_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update User By ID",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe1\",\r\n  \"email\": \"john5@example.com\",\r\n  \"contactNo\": \"01234567890\",\r\n  \"address\": \"Khulna, Bangladesh\",\r\n  \"profileImg\": \"user1.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{USER_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:20 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"10c-sKkNxeHRxj4rP6W9V5dkX9vlk7w\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::kw665-1695576140125-351eba81836e"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"id\": \"4848dac8-ee75-4f72-9727-31cb7a6505b2\",\n        \"name\": \"John Doe1\",\n        \"email\": \"john5@example.com\",\n        \"role\": \"admin\",\n        \"contactNo\": \"01234567890\",\n        \"address\": \"Khulna, Bangladesh\",\n        \"profileImg\": \"user1.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Customer By ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/users/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{CUSTOMER_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Customer By ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{CUSTOMER_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:28 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"10e-usqsSCGtd30c4AqoTXOBinhU1rc\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::s5d7v-1695576148400-469c1af8e155"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User deleted successfully\",\n    \"data\": {\n        \"id\": \"cf236196-53c3-470b-b582-cb88eddd9a72\",\n        \"name\": \"Jhon Doe\",\n        \"email\": \"customer@example.com\",\n        \"role\": \"customer\",\n        \"contactNo\": \"1234567890\",\n        \"address\": \"Dhaka, Bangladesh\",\n        \"profileImg\": \"user.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User By ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.collectionVariables.get(\"resetValue\")?.forEach((a) => pm.collectionVariables.set(a.key, a.value))\r",
+							"// pm.collectionVariables.unset(\"resetValue\")\r",
+							"\r",
+							"\r",
+							"// Get all collectionVariables \r",
+							"const variables = pm.collectionVariables.toObject();\r",
+							"\r",
+							"// Clear variable values\r",
+							"Object.keys(variables).forEach(key => {\r",
+							"  pm.collectionVariables.set(key, '');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/api/v1/users/:id",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "{{USER_ID}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete User By ID",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "{{USER_ID}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "268"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 24 Sep 2023 17:22:34 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"10c-7vNVQV5WNg9oblEeqv6FZJwPZ5A\""
+						},
+						{
+							"key": "Server",
+							"value": "Vercel"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Vercel-Cache",
+							"value": "MISS"
+						},
+						{
+							"key": "X-Vercel-Id",
+							"value": "iad1::iad1::pbfb8-1695576154869-f197807e4e15"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User deleted successfully\",\n    \"data\": {\n        \"id\": \"4848dac8-ee75-4f72-9727-31cb7a6505b2\",\n        \"name\": \"John Doe1\",\n        \"email\": \"john5@example.com\",\n        \"role\": \"admin\",\n        \"contactNo\": \"01234567890\",\n        \"address\": \"Khulna, Bangladesh\",\n        \"profileImg\": \"user1.jpg\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "CATEGORY_ID",
+			"value": ""
+		},
+		{
+			"key": "BOOK_ID",
+			"value": ""
+		},
+		{
+			"key": "CUSTOMER_TOKEN",
+			"value": ""
+		},
+		{
+			"key": "CATEGORY_CUCTOMER",
+			"value": ""
+		},
+		{
+			"key": "BOOK_CUSTOMER",
+			"value": ""
+		},
+		{
+			"key": "ORDER_ID",
+			"value": ""
+		},
+		{
+			"key": "TOKEN",
+			"value": ""
+		},
+		{
+			"key": "USER_ID",
+			"value": ""
+		},
+		{
+			"key": "CUSTOMER_ID",
+			"value": ""
+		}
+	]
+}
